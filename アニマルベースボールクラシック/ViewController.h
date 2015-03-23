@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
+    IBOutlet UIImageView *ballView;
+    
+    
+}
+
+
+-(IBAction)toukyu;
+
+
+
+
+
+
 
 @end
