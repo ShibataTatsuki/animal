@@ -22,13 +22,18 @@
     }
     return self;
 }
-@synthesize kuria;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSString *path6 = [[NSBundle mainBundle] pathForResource:@"kuria" ofType:@"mp3"];
+    NSURL *url6 = [NSURL fileURLWithPath:path6];
+    self.kuria = [[AVAudioPlayer alloc] initWithContentsOfURL:url6 error:NULL];
+    
+
     
     
-    
+    [self.kuria play];
     // Do any additional setup after loading the view.
 }
 

@@ -28,10 +28,7 @@
     IBOutlet UILabel* hp2Label;
     IBOutlet UIImageView*teki1;
     IBOutlet UIImageView*teki2;
-    IBOutlet UILabel *teki3;
-    IBOutlet UILabel *teki4;
-    IBOutlet UILabel *teki5;
-    IBOutlet UILabel *teki6;
+    
     IBOutlet UILabel *menu;
     
     IBOutlet UIButton *pushbtn;

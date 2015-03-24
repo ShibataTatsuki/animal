@@ -21,5 +21,5 @@
 
 
 @property AVAudioPlayer *kuria;
--(IBAction)modoru;
+
 @end

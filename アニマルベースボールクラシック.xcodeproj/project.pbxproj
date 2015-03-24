@@ -48,6 +48,7 @@
 		7C9C3AD919AC694D00C66995 /* tattun1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9C3AD819AC694D00C66995 /* tattun1.png */; };
 		7CD2F2B11AC10508002F5A3C /* n78.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7CD2F2B01AC10508002F5A3C /* n78.mp3 */; };
 		7CD2F2B31AC11C93002F5A3C /* kuria.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7CD2F2B21AC11C93002F5A3C /* kuria.mp3 */; };
+		7CD2F2B51AC13406002F5A3C /* fail.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7CD2F2B41AC13406002F5A3C /* fail.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		7C9C3AD819AC694D00C66995 /* tattun1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tattun1.png; sourceTree = "<group>"; };
 		7CD2F2B01AC10508002F5A3C /* n78.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = n78.mp3; sourceTree = "<group>"; };
 		7CD2F2B21AC11C93002F5A3C /* kuria.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kuria.mp3; sourceTree = "<group>"; };
+		7CD2F2B41AC13406002F5A3C /* fail.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fail.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				7C79C92A1ABFEED300E21EB3 /* Unknown.png */,
 				7C96E3E519AB0621005E8312 /* images-2.jpeg */,
 				7CD2F2B01AC10508002F5A3C /* n78.mp3 */,
+				7CD2F2B41AC13406002F5A3C /* fail.mp3 */,
 				7CD2F2B21AC11C93002F5A3C /* kuria.mp3 */,
 				7C96E3DF19AAFF45005E8312 /* images-1.jpeg */,
 				7C96E3DD19AAFF2A005E8312 /* images-2.png */,
@@ -342,6 +345,7 @@
 				7C5BD3721A4CEA5F00F7B6FF /* boss_sound.mp3 in Resources */,
 				7C9C3AD519AC676B00C66995 /* tattun.png in Resources */,
 				7C9A154B19A6DD0200316769 /* Default-568h@2x.png in Resources */,
+				7CD2F2B51AC13406002F5A3C /* fail.mp3 in Resources */,
 				7C9A154E19A6DD0200316769 /* MainStoryboard.storyboard in Resources */,
 				7C96E3F219AB1E16005E8312 /* 788_0.jpg in Resources */,
 				7C96E3EE19AB0EA6005E8312 /* lgi01c201308132000.png in Resources */,

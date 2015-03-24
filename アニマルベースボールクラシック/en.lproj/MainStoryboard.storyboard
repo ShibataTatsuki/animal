@@ -24,7 +24,7 @@
                                     <color key="titleColor" red="0.32549020649999999" green="0.90980398650000005" blue="0.34509804840000002" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="start" destination="2" eventType="touchUpInside" id="L8Y-0Z-Tto"/>
+                                    <action selector="start" destination="2" eventType="touchUpInside" id="BIl-s8-gqy"/>
                                     <segue destination="bbX-Hg-vlK" kind="modal" id="5Zg-sy-IR7"/>
                                 </connections>
                             </button>
@@ -149,34 +149,6 @@
                                 <color key="textColor" red="1" green="0.055490236259895021" blue="0.0331461565704948" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uQS-po-mqY">
-                                <rect key="frame" x="0.0" y="0.0" width="6" height="316"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y4I-Dn-HWb">
-                                <rect key="frame" x="313" y="20" width="5" height="284"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="byK-it-mMq">
-                                <rect key="frame" x="16" y="403" width="289" height="9"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m6r-yA-EdR">
-                                <rect key="frame" x="0.0" y="5" width="320" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="images-1.png" id="Z0e-DJ-Ivs">
                                 <rect key="frame" x="23" y="65" width="80" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -218,10 +190,6 @@
                         <outlet property="pushbtn" destination="iKK-8p-PaM" id="ZZo-A0-7ke"/>
                         <outlet property="teki1" destination="Z0e-DJ-Ivs" id="c7Y-iN-iu6"/>
                         <outlet property="teki2" destination="GeV-HJ-vNn" id="Iby-eJ-yVc"/>
-                        <outlet property="teki3" destination="m6r-yA-EdR" id="HfM-IW-3yz"/>
-                        <outlet property="teki4" destination="uQS-po-mqY" id="huO-6f-X8d"/>
-                        <outlet property="teki5" destination="y4I-Dn-HWb" id="azE-h7-eH1"/>
-                        <outlet property="teki6" destination="byK-it-mMq" id="g0g-gR-wNb"/>
                         <segue destination="YXI-5c-B2t" kind="modal" identifier="gameover" id="Z28-46-iwM"/>
                     </connections>
                 </viewController>
@@ -369,7 +337,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="modoru" destination="AUN-QO-RLn" eventType="touchUpInside" id="loB-og-EGR"/>
                                     <segue destination="2" kind="modal" id="sXZ-sp-qFm"/>
                                 </connections>
                             </button>
@@ -413,8 +380,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="sXZ-sp-qFm"/>
-        <segue reference="5Zg-sy-IR7"/>
         <segue reference="Whz-2H-N4f"/>
+        <segue reference="5Zg-sy-IR7"/>
+        <segue reference="sXZ-sp-qFm"/>
     </inferredMetricsTieBreakers>
 </document>

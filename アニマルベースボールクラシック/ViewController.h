@@ -9,13 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface ViewController : UIViewController{
-    IBOutlet UIImageView *ballView;
-    
-    
+@interface ViewController : UIViewController
 
-    
-}
+
+
+
 @property(nonatomic,retain)AVAudioPlayer *n78;
 -(IBAction)start;
 
