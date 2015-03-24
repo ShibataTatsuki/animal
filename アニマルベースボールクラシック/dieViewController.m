@@ -34,9 +34,8 @@
     [self.fail play];
     NSLog(@"test");
 
+  }
 
-
-}
 
 
 

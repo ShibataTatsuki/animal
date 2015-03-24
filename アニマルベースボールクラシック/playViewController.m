@@ -55,7 +55,7 @@
     ballMoveY = 2;
 
     
-        myhp=20000;
+        myhp=20;
         hpLabel.text=[NSString stringWithFormat:@"%d",myhp];
         myhpBar.progress=1.0;
             hp2=12000;
@@ -157,6 +157,9 @@
         [ballTm invalidate];
         [tm invalidate];
         [player stop];
+        label.text=@"You died";
+        
+        [self performSegueWithIdentifier:@"gameover" sender:nil];
         [self performSelector:@selector(gameover)withObject:nil afterDelay:1.0];
     }
     
@@ -174,6 +177,7 @@
         
         
     }
+    
 }
 
 
@@ -305,7 +309,7 @@
 
 - (void)gameover
 {
-    [self performSegueWithIdentifier:@"gameover" sender:nil];
+    
 }
 
 

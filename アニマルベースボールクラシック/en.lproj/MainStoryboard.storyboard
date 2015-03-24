@@ -171,6 +171,13 @@
                                 <rect key="frame" x="12" y="457" width="72" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zYm-Ez-h59">
+                                <rect key="frame" x="20" y="214" width="284" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.4440130108" blue="0.23137740439999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.017225678471969208" green="1" blue="0.073184253022421486" alpha="1" colorSpace="calibratedRGB"/>
@@ -182,6 +189,7 @@
                         <outlet property="hanteilabel" destination="hcm-P9-yko" id="jb7-lO-ixi"/>
                         <outlet property="hp2Label" destination="cOi-17-Yk3" id="RCr-Ec-x8L"/>
                         <outlet property="hpLabel" destination="IvI-hJ-8dV" id="Ta0-aV-e88"/>
+                        <outlet property="label" destination="zYm-Ez-h59" id="P6I-yA-ySv"/>
                         <outlet property="myhpBar" destination="mKJ-on-fHw" id="kXf-rC-hId"/>
                         <outlet property="myhpLabel" destination="jMb-Pw-0zd" id="2eE-I0-bhT"/>
                         <outlet property="nageru" destination="JOO-RA-ccq" id="hpg-8o-LxH"/>
