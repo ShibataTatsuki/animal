@@ -186,7 +186,7 @@
         NSLog(@"call die");
         [ballTm invalidate];
         [tm invalidate];
-        
+        [player stop];
         [self performSelector:@selector(gameover)withObject:nil afterDelay:1.0];
     }
     
@@ -195,6 +195,7 @@
     myhpLabel.text = [NSString stringWithFormat:@"%d",myhp];
     if(hp<=0&&hp2<=0){
         NSLog(@"call clear");
+        [player stop];
         clearViewController *ViewController=[self.storyboard
                                              instantiateViewControllerWithIdentifier:@"clear"];
         [self presentViewController:ViewController animated: YES completion:nil];
@@ -265,7 +266,7 @@
     BaseballView.hidden=NO;
     nageru.hidden=YES;
     
-    
+    pushbtn.hidden=NO;
     BaseballView.center = CGPointMake(160,171);
     [ballTm fire];
     
@@ -274,6 +275,8 @@
 
 
 -(IBAction)push2{
+    
+    pushbtn.hidden=YES;
     [self.bat_sound play];
         if(swing == NO){
         // アニメーション
@@ -293,6 +296,7 @@
             gapY = ToumeiView.center.y - BaseballView.center.y;
             ballMoveY = -ballMoveY*5;
             ballMoveX = -gapY / 30 *5;
+            
         }
         //振るか振らないか
         swing = YES;

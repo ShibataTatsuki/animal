@@ -14,15 +14,14 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tattun1.png" id="IeS-jw-Rnw">
-                                <rect key="frame" x="-7" y="-5" width="334" height="573"/>
+                                <rect key="frame" x="-14" y="-3" width="334" height="573"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6c6-Co-OHa">
-                                <rect key="frame" x="52" y="388" width="217" height="111"/>
+                                <rect key="frame" x="45" y="390" width="217" height="111"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="43"/>
                                 <state key="normal" title="start!">
                                     <color key="titleColor" red="0.32549020649999999" green="0.90980398650000005" blue="0.34509804840000002" alpha="1" colorSpace="deviceRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="bbX-Hg-vlK" kind="modal" id="5Zg-sy-IR7"/>
@@ -34,7 +33,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="270" y="186"/>
+            <point key="canvasLocation" x="104" y="317"/>
         </scene>
         <!--Play View Controller-->
         <scene sceneID="HTe-xq-RPk">
@@ -45,19 +44,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="788_0.jpg" id="ElV-xd-HOl">
-                                <rect key="frame" x="0.0" y="0.0" width="318" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <progressView opaque="NO" contentMode="scaleToFill" progress="0.5" id="mKJ-on-fHw">
                                 <rect key="frame" x="12" y="447" width="288" height="2"/>
                                 <color key="progressTintColor" red="1" green="0.02226434825" blue="0.047365590659999998" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zj5-yh-gIR">
-                                <rect key="frame" x="200" y="468" width="59" height="100"/>
-                                <state key="normal" backgroundImage="images-2.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZDo-cB-12k">
                                 <rect key="frame" x="104" y="494" width="66" height="63"/>
                                 <state key="normal">
@@ -82,10 +75,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="commencer_sign-2.gif" id="pr7-tH-nt6">
                                 <rect key="frame" x="148" y="161" width="20" height="20"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="images.png" id="unO-rC-6Si">
-                                <rect key="frame" x="104" y="321" width="57" height="68"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iKK-8p-PaM">
                                 <rect key="frame" x="236" y="338" width="69" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -97,13 +86,6 @@
                                 <connections>
                                     <action selector="push2" destination="bbX-Hg-vlK" eventType="touchUpInside" id="gbw-ey-sFI"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5Kk-UB-UjC">
-                                <rect key="frame" x="20" y="468" width="67" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="Unknown.jpeg">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Ciu-2M-Nrk">
                                 <rect key="frame" x="267" y="527" width="44" height="30"/>
@@ -117,13 +99,6 @@
                                     <action selector="menu" destination="bbX-Hg-vlK" eventType="touchUpInside" id="HZy-KU-fnf"/>
                                     <segue destination="mtn-nu-Xhu" kind="modal" id="Whz-2H-N4f"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LC8-69-GLf">
-                                <rect key="frame" x="107" y="468" width="65" height="102"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="images.jpeg">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="animal_suwaru_d_05.png" id="GeV-HJ-vNn">
                                 <rect key="frame" x="206" y="85" width="75" height="95"/>
@@ -174,7 +149,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uQS-po-mqY">
-                                <rect key="frame" x="0.0" y="20" width="6" height="296"/>
+                                <rect key="frame" x="0.0" y="0.0" width="6" height="316"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -205,13 +180,31 @@
                                 <rect key="frame" x="23" y="65" width="80" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unknown.png" id="TZ7-RR-90E">
+                                <rect key="frame" x="94" y="459" width="74" height="109"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zj5-yh-gIR">
+                                <rect key="frame" x="183" y="457" width="67" height="100"/>
+                                <state key="normal" backgroundImage="images-2.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="images2.png" id="Ivk-rG-xQY">
+                                <rect key="frame" x="92" y="305" width="76" height="76"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="images.png" id="Lsf-Po-jm2">
+                                <rect key="frame" x="12" y="457" width="72" height="108"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.4440130108" blue="0.23137740439999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.017225678471969208" green="1" blue="0.073184253022421486" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="BaseballView" destination="pr7-tH-nt6" id="Svg-j1-eSc"/>
-                        <outlet property="BattoView" destination="unO-rC-6Si" id="OUu-kK-dWl"/>
+                        <outlet property="BattoView" destination="Ivk-rG-xQY" id="Egs-WI-bd4"/>
                         <outlet property="ToumeiView" destination="oJR-yx-bv2" id="qYV-zC-jzL"/>
                         <outlet property="hanteilabel" destination="hcm-P9-yko" id="jb7-lO-ixi"/>
                         <outlet property="hp2Label" destination="cOi-17-Yk3" id="RCr-Ec-x8L"/>
@@ -221,6 +214,7 @@
                         <outlet property="nageru" destination="JOO-RA-ccq" id="hpg-8o-LxH"/>
                         <outlet property="progress1" destination="R77-jR-sYL" id="VoA-sX-LZI"/>
                         <outlet property="progress2" destination="5hR-hp-XM9" id="y3n-QN-R4z"/>
+                        <outlet property="pushbtn" destination="iKK-8p-PaM" id="ZZo-A0-7ke"/>
                         <outlet property="teki1" destination="Z0e-DJ-Ivs" id="c7Y-iN-iu6"/>
                         <outlet property="teki2" destination="GeV-HJ-vNn" id="Iby-eJ-yVc"/>
                         <outlet property="teki3" destination="m6r-yA-EdR" id="HfM-IW-3yz"/>
@@ -284,12 +278,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="　　　＜操作方法＞　　　　　　　　　ボールを投げますか？のボタンを押せばボールがででくるぞ！打つボタンでタイミングよく打て！そして敵の動物をたおすんだ！" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2HH-T1-pmJ">
-                                <rect key="frame" x="0.0" y="52" width="320" height="376"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="akq-Ig-eFe">
                                 <rect key="frame" x="47" y="490" width="226" height="39"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
@@ -300,6 +288,13 @@
                                     <segue destination="mtn-nu-Xhu" kind="modal" id="LF3-aL-DMA"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="　　　＜操作方法＞　　　　　　　　　ボールを投げますか？のボタンを押せばボールがででくるぞ！打つボタンでタイミングよく打て！（打つボタンは一回しかおせないよ）そして敵の動物をたおすんだ！" selectable="NO" id="aU6-LH-etx">
+                                <rect key="frame" x="7" y="90" width="286" height="176"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -400,14 +395,14 @@
     </scenes>
     <resources>
         <image name="788_0.jpg" width="313" height="510"/>
-        <image name="Unknown.jpeg" width="161" height="312"/>
+        <image name="Unknown.png" width="108" height="282"/>
         <image name="animal_suwaru_d_05.png" width="279" height="301"/>
         <image name="commencer_sign-2.gif" width="300" height="300"/>
         <image name="hito.png" width="100" height="192"/>
         <image name="images-1.png" width="80" height="93"/>
         <image name="images-2.png" width="103" height="135"/>
-        <image name="images.jpeg" width="205" height="246"/>
-        <image name="images.png" width="76" height="76"/>
+        <image name="images.png" width="143" height="237"/>
+        <image name="images2.png" width="76" height="76"/>
         <image name="tattun1.png" width="120" height="213"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -416,8 +411,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="5Zg-sy-IR7"/>
         <segue reference="Lr5-lk-4Ys"/>
+        <segue reference="5Zg-sy-IR7"/>
         <segue reference="Whz-2H-N4f"/>
     </inferredMetricsTieBreakers>
 </document>

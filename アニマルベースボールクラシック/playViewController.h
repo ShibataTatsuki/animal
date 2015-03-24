@@ -34,6 +34,8 @@
     IBOutlet UILabel *teki6;
     IBOutlet UILabel *menu;
     
+    IBOutlet UIButton *pushbtn;
+    
     float ballMoveX;
     float ballMoveY;
     BOOL hitTiming;
@@ -48,8 +50,7 @@
 -(IBAction)push2;
 @property AVAudioPlayer *dageki_sound;
 @property AVAudioPlayer *bat_sound;
-    
-
+-(IBAction)nageru;
 
         
 
