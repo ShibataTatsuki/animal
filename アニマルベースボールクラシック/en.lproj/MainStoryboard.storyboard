@@ -24,6 +24,7 @@
                                     <color key="titleColor" red="0.32549020649999999" green="0.90980398650000005" blue="0.34509804840000002" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="start" destination="2" eventType="touchUpInside" id="L8Y-0Z-Tto"/>
                                     <segue destination="bbX-Hg-vlK" kind="modal" id="5Zg-sy-IR7"/>
                                 </connections>
                             </button>
@@ -368,6 +369,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="modoru" destination="AUN-QO-RLn" eventType="touchUpInside" id="loB-og-EGR"/>
                                     <segue destination="2" kind="modal" id="sXZ-sp-qFm"/>
                                 </connections>
                             </button>
@@ -411,7 +413,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Lr5-lk-4Ys"/>
+        <segue reference="sXZ-sp-qFm"/>
         <segue reference="5Zg-sy-IR7"/>
         <segue reference="Whz-2H-N4f"/>
     </inferredMetricsTieBreakers>

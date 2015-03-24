@@ -47,11 +47,12 @@
 
 @property(nonatomic,retain)AVAudioPlayer *player;
 @property AVAudioPlayer *batto_sound;
--(IBAction)push2;
 @property AVAudioPlayer *dageki_sound;
 @property AVAudioPlayer *bat_sound;
--(IBAction)nageru;
+@property AVAudioPlayer *kuria;
 
+-(IBAction)nageru;
+-(IBAction)push2;
         
 
 

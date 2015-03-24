@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <AVFoundation/AVFoundation.h>
 @interface clearViewController : UIViewController
 
+
+
+
+
+
+
+
+
+
+
+@property AVAudioPlayer *kuria;
+-(IBAction)modoru;
 @end

@@ -7,15 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface ViewController : UIViewController{
     IBOutlet UIImageView *ballView;
     
     
+
+    
 }
-
-
--(IBAction)toukyu;
+@property(nonatomic,retain)AVAudioPlayer *n78;
+-(IBAction)start;
 
 
 

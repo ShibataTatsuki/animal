@@ -14,11 +14,21 @@
 
 @implementation ViewController
 
+
+
+@synthesize n78;
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     
+    NSURL *url3 = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"n78"ofType:@"mp3"]];
+    NSError *error = nil;
+    n78 = [[AVAudioPlayer alloc] initWithContentsOfURL:url3 error:&error];
+    [n78 play];
     
     
     
@@ -29,10 +39,15 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
 }
+-(IBAction)start{
+    [n78 stop];
+}
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+    
     // Dispose of any resources that can be recreated.
 }
 

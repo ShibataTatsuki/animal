@@ -35,6 +35,11 @@
     NSURL *url2 = [NSURL fileURLWithPath:path2];
     self.bat_sound = [[AVAudioPlayer alloc] initWithContentsOfURL:url2 error:NULL];
     
+    NSString *path6 = [[NSBundle mainBundle] pathForResource:@"kuria" ofType:@"mp3"];
+    NSURL *url6 = [NSURL fileURLWithPath:path6];
+    self.kuria = [[AVAudioPlayer alloc] initWithContentsOfURL:url6 error:NULL];
+    
+    
     NSURL *url4 = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"boss_sound"ofType:@"mp3"]];
     NSError *error = nil;
     player = [[AVAudioPlayer alloc] initWithContentsOfURL:url4 error:&error];
@@ -146,7 +151,7 @@
         //お互いが重なったときの処理をifの中に書きます。
         BaseballView.hidden = YES;
         hanteilabel.text=@"アウト";
-        hanteilabel.hidden=NO;
+        hanteilabel.hidden=YES;
     }
     
 
@@ -196,9 +201,11 @@
     if(hp<=0&&hp2<=0){
         NSLog(@"call clear");
         [player stop];
+        
         clearViewController *ViewController=[self.storyboard
                                              instantiateViewControllerWithIdentifier:@"clear"];
         [self presentViewController:ViewController animated: YES completion:nil];
+        [self.kuria play];
     }
 }
 
