@@ -21,7 +21,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ktz-ru-YAs">
-                                <rect key="frame" x="84" y="141" width="153" height="30"/>
+                                <rect key="frame" x="16" y="141" width="275" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -37,10 +37,25 @@
                                     <segue destination="2" kind="modal" id="O25-4Z-5Od"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今の最低記録（HP）" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="idZ-yR-9DZ">
+                                <rect key="frame" x="80" y="217" width="160" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="c0b-MG-WpW">
+                                <rect key="frame" x="16" y="273" width="288" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="sukoa_worstlabel" destination="c0b-MG-WpW" id="Nss-CF-xEx"/>
                         <outlet property="sukoalabel" destination="ktz-ru-YAs" id="Tj4-e4-Xox"/>
                     </connections>
                 </viewController>
@@ -477,6 +492,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="Whz-2H-N4f"/>
         <segue reference="5Zg-sy-IR7"/>
-        <segue reference="sXZ-sp-qFm"/>
+        <segue reference="O25-4Z-5Od"/>
     </inferredMetricsTieBreakers>
 </document>

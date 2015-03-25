@@ -22,7 +22,8 @@
     NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
     int myhp = [[df objectForKey:@"myhp"] integerValue];
     sukoalabel.text=[NSString stringWithFormat:@"%d",myhp];
-
+    int myhp_worst = [[df objectForKey:@"myhp_worst"] integerValue];
+    sukoa_worstlabel.text=[NSString stringWithFormat:@"%d",myhp_worst];
 
 }
 

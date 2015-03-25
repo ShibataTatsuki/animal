@@ -185,7 +185,8 @@
         //データを呼び出す
         NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
         int myhp_best = [[df objectForKey:@"myhp"] integerValue];
-       
+        int myhp_worst = [[df objectForKey:@"myhp_worst"] integerValue];
+
 
         
 
@@ -194,7 +195,11 @@
             [df setInteger:myhp forKey:@"myhp"];
             
         }
-            [df setInteger:myhp_new forKey:@"myhp_new"];
+        [df setInteger:myhp forKey:@"myhp_new"];
+        if (myhp_worst > myhp) {
+            [df setInteger:myhp forKey:@"myhp_worst"];
+            
+        }
         NSLog(@"call clear");
         [player stop];
         [tm invalidate];

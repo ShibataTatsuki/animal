@@ -40,8 +40,7 @@
     float gapY;
     NSTimer *ballTm;
     IBOutlet UILabel *hanteilabel;
-    IBOutlet UILabel*myhp_new;
-}
+    }
 
 @property(nonatomic,retain)AVAudioPlayer *player;
 @property AVAudioPlayer *batto_sound;

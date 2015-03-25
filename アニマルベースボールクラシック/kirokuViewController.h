@@ -12,5 +12,7 @@
     int number;
     IBOutlet UITableView*table;
     IBOutlet UILabel*sukoalabel;
+    IBOutlet UILabel*sukoa_worstlabel;
+    
 }
 @end
