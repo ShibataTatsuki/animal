@@ -35,6 +35,10 @@
     NSURL *url2 = [NSURL fileURLWithPath:path2];
     self.bat_sound = [[AVAudioPlayer alloc] initWithContentsOfURL:url2 error:NULL];
     
+    NSString *path7 = [[NSBundle mainBundle] pathForResource:@"fail" ofType:@"mp3"];
+    NSURL *url7 = [NSURL fileURLWithPath:path7];
+    self.fail = [[AVAudioPlayer alloc] initWithContentsOfURL:url7 error:NULL];
+    
     NSURL *url4 = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"boss_sound"ofType:@"mp3"]];
     NSError *error = nil;
     player = [[AVAudioPlayer alloc] initWithContentsOfURL:url4 error:&error];
@@ -55,7 +59,7 @@
     ballMoveY = 2;
 
     
-        myhp=20;
+        myhp=20000;
         hpLabel.text=[NSString stringWithFormat:@"%d",myhp];
         myhpBar.progress=1.0;
             hp2=12000;
@@ -152,16 +156,27 @@
     //[myhpBar setProgress:(float)myhp/ 1000.0];
     myhpLabel.text = [NSString stringWithFormat:@"%d",myhp];
     if(myhp<=0){
-        
+        myhp=0;
+        myhpLabel.text = [NSString stringWithFormat:@"%d",myhp];
+         [self.fail play];
         NSLog(@"call die");
         [ballTm invalidate];
         [tm invalidate];
-        [player stop];
-        label.text=@"You died";
+                //        [self performSelector:@selector(dieViewController)withObject:nil afterDelay:3.0f];
+
         
-        [self performSegueWithIdentifier:@"gameover" sender:nil];
-        [self performSelector:@selector(gameover)withObject:nil afterDelay:1.0];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self performSegueWithIdentifier:@"gameover" sender:nil];
+            [player stop];
+
+        
+        });
+        
+        
+       
     }
+    
+
     
     myhpBar.progress=(float)myhp/ 20000;
     //[myhpBar setProgress:(float)myhp/ 1000.0];

@@ -47,10 +47,11 @@
 @property AVAudioPlayer *dageki_sound;
 @property AVAudioPlayer *bat_sound;
 @property AVAudioPlayer *kuria;
+@property AVAudioPlayer *fail;
 
 -(IBAction)nageru;
 -(IBAction)push2;
-        
+
 
 
 

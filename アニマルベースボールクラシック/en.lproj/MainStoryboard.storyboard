@@ -198,7 +198,7 @@
                         <outlet property="pushbtn" destination="iKK-8p-PaM" id="ZZo-A0-7ke"/>
                         <outlet property="teki1" destination="Z0e-DJ-Ivs" id="c7Y-iN-iu6"/>
                         <outlet property="teki2" destination="GeV-HJ-vNn" id="Iby-eJ-yVc"/>
-                        <segue destination="YXI-5c-B2t" kind="modal" identifier="gameover" id="Z28-46-iwM"/>
+                        <segue destination="YXI-5c-B2t" kind="modal" identifier="gameover" id="KBw-Tm-2di"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAO-sd-Uzx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -280,10 +280,10 @@
             </objects>
             <point key="canvasLocation" x="129" y="943"/>
         </scene>
-        <!--View Controller-->
+        <!--Menu View Controller-->
         <scene sceneID="KpQ-7i-UAM">
             <objects>
-                <viewController id="mtn-nu-Xhu" sceneMemberID="viewController">
+                <viewController id="mtn-nu-Xhu" customClass="menuViewController" sceneMemberID="viewController">
                     <view key="view" alpha="0.70000000000000007" contentMode="scaleToFill" id="Q85-Pg-liz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -388,8 +388,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="vFj-dE-Etx"/>
         <segue reference="Whz-2H-N4f"/>
-        <segue reference="5Zg-sy-IR7"/>
-        <segue reference="sXZ-sp-qFm"/>
+        <segue reference="aCu-2W-kgG"/>
     </inferredMetricsTieBreakers>
 </document>

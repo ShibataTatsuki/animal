@@ -24,7 +24,6 @@
 		7C9A154719A6DD0200316769 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9A154619A6DD0200316769 /* Default.png */; };
 		7C9A154919A6DD0200316769 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9A154819A6DD0200316769 /* Default@2x.png */; };
 		7C9A154B19A6DD0200316769 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9A154A19A6DD0200316769 /* Default-568h@2x.png */; };
-		7C9A154E19A6DD0200316769 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C9A154C19A6DD0200316769 /* MainStoryboard.storyboard */; };
 		7C9A155119A6DD0200316769 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9A155019A6DD0200316769 /* ViewController.m */; };
 		7C9A155919A6DD0300316769 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C9A155819A6DD0300316769 /* SenTestingKit.framework */; };
 		7C9A155A19A6DD0300316769 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C9A153419A6DD0200316769 /* UIKit.framework */; };
@@ -50,6 +49,8 @@
 		7CD2F2E71AC14FA9002F5A3C /* images2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD2F2DE1AC14FA9002F5A3C /* images2.png */; };
 		7CD2F2E91AC14FAE002F5A3C /* commencer_sign-2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7CD2F2E81AC14FAE002F5A3C /* commencer_sign-2.gif */; };
 		7CD2F2EB1AC14FD1002F5A3C /* Unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD2F2EA1AC14FD1002F5A3C /* Unknown.png */; };
+		7CDD9FF11AC2409D00DA7616 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDD9FEF1AC2409D00DA7616 /* MainStoryboard.storyboard */; };
+		7CDD9FF41AC2488A00DA7616 /* menuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD9FF31AC2488A00DA7616 /* menuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +88,6 @@
 		7C9A154619A6DD0200316769 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		7C9A154819A6DD0200316769 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		7C9A154A19A6DD0200316769 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		7C9A154D19A6DD0200316769 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		7C9A154F19A6DD0200316769 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		7C9A155019A6DD0200316769 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		7C9A155719A6DD0300316769 /* アニマルベースボールクラシックTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "アニマルベースボールクラシックTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +115,9 @@
 		7CD2F2DE1AC14FA9002F5A3C /* images2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = images2.png; sourceTree = "<group>"; };
 		7CD2F2E81AC14FAE002F5A3C /* commencer_sign-2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "commencer_sign-2.gif"; sourceTree = "<group>"; };
 		7CD2F2EA1AC14FD1002F5A3C /* Unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unknown.png; sourceTree = "<group>"; };
+		7CDD9FF01AC2409D00DA7616 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		7CDD9FF21AC2488A00DA7616 /* menuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menuViewController.h; sourceTree = "<group>"; };
+		7CDD9FF31AC2488A00DA7616 /* menuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = menuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,7 +213,7 @@
 				7C5BD3731A4CEA6400F7B6FF /* dageki_sound.mp3 */,
 				7C9A154319A6DD0200316769 /* AppDelegate.h */,
 				7C9A154419A6DD0200316769 /* AppDelegate.m */,
-				7C9A154C19A6DD0200316769 /* MainStoryboard.storyboard */,
+				7CDD9FEF1AC2409D00DA7616 /* MainStoryboard.storyboard */,
 				7C2156C719A85A1A007759C9 /* playViewController.h */,
 				7C2156C819A85A1A007759C9 /* playViewController.m */,
 				7C96A96819AC23F400D25597 /* dieViewController.h */,
@@ -219,6 +222,8 @@
 				7C96A96619AC237E00D25597 /* clearViewController.m */,
 				7C9A154F19A6DD0200316769 /* ViewController.h */,
 				7C9A155019A6DD0200316769 /* ViewController.m */,
+				7CDD9FF21AC2488A00DA7616 /* menuViewController.h */,
+				7CDD9FF31AC2488A00DA7616 /* menuViewController.m */,
 				7C9A153B19A6DD0200316769 /* Supporting Files */,
 			);
 			path = "アニマルベースボールクラシック";
@@ -338,6 +343,7 @@
 				7CD2F2E21AC14FA9002F5A3C /* animal_suwaru_d_05.png in Resources */,
 				7C5BD3741A4CEA6400F7B6FF /* dageki_sound.mp3 in Resources */,
 				7CD2F2E91AC14FAE002F5A3C /* commencer_sign-2.gif in Resources */,
+				7CDD9FF11AC2409D00DA7616 /* MainStoryboard.storyboard in Resources */,
 				7CD2F2EB1AC14FD1002F5A3C /* Unknown.png in Resources */,
 				7CD2F2E41AC14FA9002F5A3C /* images-1.png in Resources */,
 				7CD2F2B11AC10508002F5A3C /* n78.mp3 in Resources */,
@@ -354,7 +360,6 @@
 				7C9A154B19A6DD0200316769 /* Default-568h@2x.png in Resources */,
 				7CD2F2B51AC13406002F5A3C /* fail.mp3 in Resources */,
 				7CD2F2D41AC14F78002F5A3C /* 788_0.jpg in Resources */,
-				7C9A154E19A6DD0200316769 /* MainStoryboard.storyboard in Resources */,
 				7CD2F2DF1AC14FA9002F5A3C /* images-1 16-40-55-935.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CDD9FF41AC2488A00DA7616 /* menuViewController.m in Sources */,
 				7C96A96719AC237E00D25597 /* clearViewController.m in Sources */,
 				7C96A96A19AC23F400D25597 /* dieViewController.m in Sources */,
 				7C2156C919A85A1A007759C9 /* playViewController.m in Sources */,
@@ -426,20 +432,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		7C9A154C19A6DD0200316769 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7C9A154D19A6DD0200316769 /* en */,
-			);
-			name = MainStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
 		7C9A156119A6DD0300316769 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7C9A156219A6DD0300316769 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7CDD9FEF1AC2409D00DA7616 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7CDD9FF01AC2409D00DA7616 /* en */,
+			);
+			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
