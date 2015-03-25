@@ -30,8 +30,14 @@
     NSURL *url6 = [NSURL fileURLWithPath:path6];
     self.kuria = [[AVAudioPlayer alloc] initWithContentsOfURL:url6 error:NULL];
     
-
+    //データを呼び出す
+    NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
+    int myhp = [[df objectForKey:@"myhp"] integerValue];
+    sukoalabel.text=[NSString stringWithFormat:@"%d",myhp];
     
+   
+    int myhp_new = [[df objectForKey:@"myhp_new"] integerValue];
+    sukoanewlabel.text=[NSString stringWithFormat:@"%d",myhp_new];
     
     [self.kuria play];
     // Do any additional setup after loading the view.

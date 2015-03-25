@@ -51,6 +51,7 @@
 		7CD2F2EB1AC14FD1002F5A3C /* Unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CD2F2EA1AC14FD1002F5A3C /* Unknown.png */; };
 		7CDD9FF11AC2409D00DA7616 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CDD9FEF1AC2409D00DA7616 /* MainStoryboard.storyboard */; };
 		7CDD9FF41AC2488A00DA7616 /* menuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD9FF31AC2488A00DA7616 /* menuViewController.m */; };
+		7CDD9FF71AC2529100DA7616 /* kirokuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CDD9FF61AC2529100DA7616 /* kirokuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,8 @@
 		7CDD9FF01AC2409D00DA7616 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		7CDD9FF21AC2488A00DA7616 /* menuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = menuViewController.h; sourceTree = "<group>"; };
 		7CDD9FF31AC2488A00DA7616 /* menuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = menuViewController.m; sourceTree = "<group>"; };
+		7CDD9FF51AC2529100DA7616 /* kirokuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kirokuViewController.h; sourceTree = "<group>"; };
+		7CDD9FF61AC2529100DA7616 /* kirokuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kirokuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +227,8 @@
 				7C9A155019A6DD0200316769 /* ViewController.m */,
 				7CDD9FF21AC2488A00DA7616 /* menuViewController.h */,
 				7CDD9FF31AC2488A00DA7616 /* menuViewController.m */,
+				7CDD9FF51AC2529100DA7616 /* kirokuViewController.h */,
+				7CDD9FF61AC2529100DA7616 /* kirokuViewController.m */,
 				7C9A153B19A6DD0200316769 /* Supporting Files */,
 			);
 			path = "アニマルベースボールクラシック";
@@ -400,6 +405,7 @@
 				7C96A96A19AC23F400D25597 /* dieViewController.m in Sources */,
 				7C2156C919A85A1A007759C9 /* playViewController.m in Sources */,
 				7C9A154119A6DD0200316769 /* main.m in Sources */,
+				7CDD9FF71AC2529100DA7616 /* kirokuViewController.m in Sources */,
 				7C9A154519A6DD0200316769 /* AppDelegate.m in Sources */,
 				7C9A155119A6DD0200316769 /* ViewController.m in Sources */,
 			);

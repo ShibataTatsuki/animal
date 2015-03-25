@@ -182,12 +182,26 @@
     //[myhpBar setProgress:(float)myhp/ 1000.0];
     myhpLabel.text = [NSString stringWithFormat:@"%d",myhp];
     if(hp<=0&&hp2<=0){
+        //データを呼び出す
+        NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
+        int myhp_best = [[df objectForKey:@"myhp"] integerValue];
+       
+
+        
+
+        //自分のHPを保存する 最高記録だったら保存する
+        if (myhp_best < myhp) {
+            [df setInteger:myhp forKey:@"myhp"];
+            
+        }
+            [df setInteger:myhp_new forKey:@"myhp_new"];
         NSLog(@"call clear");
         [player stop];
         [tm invalidate];
         clearViewController *ViewController=[self.storyboard
                                              instantiateViewControllerWithIdentifier:@"clear"];
         [self presentViewController:ViewController animated: YES completion:nil];
+        
 
         
         

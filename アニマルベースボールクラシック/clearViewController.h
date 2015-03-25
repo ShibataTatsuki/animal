@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-@interface clearViewController : UIViewController
+@interface clearViewController : UIViewController{
+    IBOutlet UILabel*sukoalabel;
+    IBOutlet UILabel*sukoanewlabel;
+}
 
 
 
