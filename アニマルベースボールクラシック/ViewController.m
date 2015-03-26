@@ -31,8 +31,8 @@
     [n78 play];
     
     
-    
-    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults removeObjectForKey:@"hozon"];
     //UIImageView *View;
     
     
