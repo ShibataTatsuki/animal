@@ -19,7 +19,7 @@
     int random_number;
     IBOutlet UIButton*nageru;
     int power;
-    IBOutlet UILabel *powerLabel;
+    IBOutlet UILabel *label;
     IBOutlet UIProgressView *progress1;
     IBOutlet UIProgressView *progress2;
     int hp;
@@ -28,7 +28,8 @@
     IBOutlet UILabel* hp2Label;
     IBOutlet UIImageView*teki1;
     IBOutlet UIImageView*teki2;
-    IBOutlet UILabel*label;
+    IBOutlet UIButton *Nageru;
+    IBOutlet UIButton *utu;
     IBOutlet UILabel *menu;
     
     IBOutlet UIButton *pushbtn;
@@ -40,6 +41,9 @@
     float gapY;
     NSTimer *ballTm;
     IBOutlet UILabel *hanteilabel;
+    
+    int hozonArray[3];
+    
     }
 
 @property(nonatomic,retain)AVAudioPlayer *player;

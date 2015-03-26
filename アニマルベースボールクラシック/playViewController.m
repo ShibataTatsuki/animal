@@ -20,6 +20,7 @@
 
 @synthesize player;
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -43,7 +44,7 @@
     NSError *error = nil;
     player = [[AVAudioPlayer alloc] initWithContentsOfURL:url4 error:&error];
     [player play];
-
+    
     tm =
     [NSTimer
      scheduledTimerWithTimeInterval:0.1f
@@ -55,23 +56,55 @@
     
     
     
-    
-    ballMoveY = 2;
-
-    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSData *data = [defaults objectForKey:@"hozon"];
+    memcpy(&hozonArray, data.bytes, data.length);
+    if (hozonArray[2]==0) {
+        NSLog(@"nil");
+       
         myhp=20000;
-        hpLabel.text=[NSString stringWithFormat:@"%d",myhp];
-        myhpBar.progress=1.0;
-            hp2=12000;
-            hp2Label.text=[NSString stringWithFormat:@"%d",hp2];
-            progress2.progress=1.0;
+        hp2=12000;
+        hp=12000;
         
-            hp=12000;
-            hpLabel.text=[NSString stringWithFormat:@"%d",hp];
-            progress1.progress=1.0;
+        
+        
+        
+    }else{
+        NSLog(@"入ってる！！");
+        //データを反映させる
+        hp = hozonArray[0];
+        hp2 = hozonArray[1];
+        myhp = hozonArray[2];
+
+        
+
+
+    }
     
-        swing = NO;
+    
+    hpLabel.text=[NSString stringWithFormat:@"%d",myhp];
+    myhpBar.progress=myhp/20000.0;
+    
+    hp2Label.text=[NSString stringWithFormat:@"%d",hp2];
+    progress2.progress=hp2/12000.0;
+    
+    hpLabel.text=[NSString stringWithFormat:@"%d",hp];
+    progress1.progress=hp/12000.0;
+    
+    [defaults removeObjectForKey:@"hozon"];
+    [defaults synchronize];
+    
+    
+    
+     ballMoveY = 2;
+    
+    
+    
+    
+    swing = NO;
     BaseballView.hidden=NO;
+    
+    
 }
 
 
@@ -89,7 +122,7 @@
         //!=は==の逆
         //この場合は敵が消えてなかったら消す
         BaseballView.hidden = YES;
-    
+        
         NSLog(@"敵1hit!");
         NSLog(@"progress1");
         
@@ -100,10 +133,10 @@
         hanteilabel.text=@"ヒット";
         hanteilabel.hidden=NO;
         
-
+        
     }
     
-
+    
     
     //敵2とボール
     if (CGRectIntersectsRect(teki2.frame, BaseballView.frame )&& teki2.hidden!=YES){
@@ -120,16 +153,16 @@
         [self.dageki_sound play];
         hanteilabel.text=@"ヒット";
         hanteilabel.hidden=NO;
-        }
+    }
     
     
     
     
-
     
-   
-
-
+    
+    
+    
+    
     
     //敵と透明ビュー
     if (CGRectIntersectsRect(ToumeiView.frame, BaseballView.frame )){
@@ -142,54 +175,72 @@
     
     
     if(hp==0){
+        //hanteilabel.hidden=YES;
         teki1.hidden=YES;
         hpLabel.hidden=YES;
         progress1.hidden=YES;
-        //hanteilabel.hidden=YES;
+        
+    }
+    else{
+        label.hidden=YES;
     }
     if(hp2==0){
+        // hanteilabel.hidden=YES;
         teki2.hidden=YES;
         hp2Label.hidden=YES;
         progress2.hidden=YES;
-        //hanteilabel.hidden=YES;
-            }
+    }
+    else{
+        label.hidden=YES;
+    }
     //[myhpBar setProgress:(float)myhp/ 1000.0];
     myhpLabel.text = [NSString stringWithFormat:@"%d",myhp];
     if(myhp<=0){
         myhp=0;
+        label.text=@"You died";
         myhpLabel.text = [NSString stringWithFormat:@"%d",myhp];
-         [self.fail play];
+        [self.fail play];
+        label.hidden=NO;
         NSLog(@"call die");
         [ballTm invalidate];
         [tm invalidate];
-                //        [self performSelector:@selector(dieViewController)withObject:nil afterDelay:3.0f];
-
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        //        [self performSelector:@selector(dieViewController)withObject:nil afterDelay:3.0f];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self performSegueWithIdentifier:@"gameover" sender:nil];
             [player stop];
-
-        
+            
+            
         });
         
         
-       
     }
     
-
+    
+    
     
     myhpBar.progress=(float)myhp/ 20000;
     //[myhpBar setProgress:(float)myhp/ 1000.0];
     myhpLabel.text = [NSString stringWithFormat:@"%d",myhp];
-    if(hp<=0&&hp2<=0){
+    if(hp<=0 && hp2<=0){
+        label.text=@"You won";
+        label.hidden=NO;
+        utu.hidden=YES;
+        Nageru.hidden=YES;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self performSegueWithIdentifier:@"clear" sender:nil];
+        });
+        
+        
+        
         //データを呼び出す
         NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
         int myhp_best = [[df objectForKey:@"myhp"] integerValue];
         int myhp_worst = [[df objectForKey:@"myhp_worst"] integerValue];
-
-
         
-
+        
+        
+        
+        
         //自分のHPを保存する 最高記録だったら保存する
         if (myhp_best < myhp) {
             [df setInteger:myhp forKey:@"myhp"];
@@ -197,21 +248,17 @@
         }
         [df setInteger:myhp forKey:@"myhp_new"];
         if (myhp_worst > myhp) {
+            
             [df setInteger:myhp forKey:@"myhp_worst"];
             
         }
         NSLog(@"call clear");
         [player stop];
         [tm invalidate];
-        clearViewController *ViewController=[self.storyboard
-                                             instantiateViewControllerWithIdentifier:@"clear"];
-        [self presentViewController:ViewController animated: YES completion:nil];
         
-
         
         
     }
-    
 }
 
 
@@ -223,7 +270,7 @@
     
     if(BaseballView.center.y >= 430 || BaseballView.center.y <= 0){
         BaseballView.hidden = YES;
-       
+        
     }
     
     if(BaseballView.hidden == YES){
@@ -248,23 +295,23 @@
 
 
 /* 0827 13:50 阿部　消す
-    // アニメーション
-    [UIView animateWithDuration:2.5f //アニメーション速度2.5秒
-                          delay:0.5f
-                        options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{
-                         BaseballView.transform = CGAffineTransformMakeTranslation(0,300);
-                         
-                         
-                     }completion:^(BOOL finished){
-                         //アニメーション終了時
-                         NSLog(@"アニメーション終了");
-                    }];
-*/
+ // アニメーション
+ [UIView animateWithDuration:2.5f //アニメーション速度2.5秒
+ delay:0.5f
+ options:UIViewAnimationOptionCurveEaseIn
+ animations:^{
+ BaseballView.transform = CGAffineTransformMakeTranslation(0,300);
+ 
+ 
+ }completion:^(BOOL finished){
+ //アニメーション終了時
+ NSLog(@"アニメーション終了");
+ }];
+ */
 -(IBAction)nageru{
     hanteilabel.hidden=YES;
     [self.batto_sound play];
-
+    
     ballTm=
     [NSTimer
      scheduledTimerWithTimeInterval:0.02f
@@ -273,7 +320,7 @@
      userInfo:nil
      repeats:YES
      ];
-
+    
     
     BaseballView.hidden=NO;
     nageru.hidden=YES;
@@ -283,27 +330,27 @@
     [ballTm fire];
     
 }
-    
+
 
 
 -(IBAction)push2{
     
     pushbtn.hidden=YES;
     [self.bat_sound play];
-        if(swing == NO){
+    if(swing == NO){
         // アニメーション
-    [UIView animateWithDuration:0.1f
-                          delay:0.0f 
-                        options:UIViewAnimationOptionCurveEaseIn
-                     animations:^{
-                         CGFloat angle = 210.0 * M_PI / 180.0;
-                         BattoView.transform = CGAffineTransformMakeRotation(angle);
-                         
-                     }completion:^(BOOL finished){
-                        //アニメーション終了時
-                        NSLog(@"battoアニメーション終了");
-                     }];
-    
+        [UIView animateWithDuration:0.1f
+                              delay:0.0f
+                            options:UIViewAnimationOptionCurveEaseIn
+                         animations:^{
+                             CGFloat angle = 210.0 * M_PI / 180.0;
+                             BattoView.transform = CGAffineTransformMakeRotation(angle);
+                             
+                         }completion:^(BOOL finished){
+                             //アニメーション終了時
+                             NSLog(@"battoアニメーション終了");
+                         }];
+        
         if(hitTiming == YES){
             gapY = ToumeiView.center.y - BaseballView.center.y;
             ballMoveY = -ballMoveY*5;
@@ -317,6 +364,25 @@
     
 }
 -(IBAction)menu{
+    hozonArray[0]=hp;
+    hozonArray[1]=hp2;
+    hozonArray[2]=myhp;
+    
+    
+    for (int i = 0; i<3; i++) {
+        NSLog(@"hozonarrayの中身は%d",hozonArray[i]);
+    }
+    
+    //hozonarrayをnsuserdefalutsで保存
+    NSUserDefaults  *defaults = [NSUserDefaults standardUserDefaults];
+    //http://stackoverflow.com/questions/350848/possible-to-save-an-integer-array-using-nsuserdefaults-on-iphone
+    NSData *data = [NSData dataWithBytes:&hozonArray length:sizeof(hozonArray)];
+    [defaults setObject:data forKey:@"hozon"];
+    BOOL successful = [defaults synchronize];
+    if (successful) {
+        NSLog(@"%@", @"データの保存に成功しました。");
+    }
+    
     [player stop];
 }
 
@@ -324,20 +390,20 @@
     random_number=arc4random() % 25* 100;
     myhp=myhp-random_number;
     [myhpBar setProgress:myhpBar.progress-random_number/20000 animated:true];
-     myhpLabel.text = [NSString stringWithFormat:@"%d", myhp];
+    myhpLabel.text = [NSString stringWithFormat:@"%d", myhp];
 }
 
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 
 
@@ -350,13 +416,13 @@
 
 
 @end
-        
-        
-    
-        
-        
-        
-        
+
+
+
+
+
+
+
 
 
 

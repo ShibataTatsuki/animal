@@ -201,7 +201,7 @@
                                 <color key="trackTintColor" red="0.99516927779999997" green="1" blue="0.99532585380000005" alpha="1" colorSpace="calibratedRGB"/>
                             </progressView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="106" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hcm-P9-yko">
-                                <rect key="frame" x="43" y="220" width="238" height="41"/>
+                                <rect key="frame" x="43" y="217" width="238" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="47"/>
                                 <color key="textColor" red="1" green="0.055490236259895021" blue="0.0331461565704948" alpha="1" colorSpace="calibratedRGB"/>
@@ -229,13 +229,6 @@
                                 <rect key="frame" x="12" y="457" width="72" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zYm-Ez-h59">
-                                <rect key="frame" x="20" y="214" width="284" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iKK-8p-PaM">
                                 <rect key="frame" x="235" y="338" width="69" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -248,6 +241,13 @@
                                     <action selector="push2" destination="bbX-Hg-vlK" eventType="touchUpInside" id="gbw-ey-sFI"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zYm-Ez-h59">
+                                <rect key="frame" x="18" y="246" width="284" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.4440130108" blue="0.23137740439999999" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.017225678471969208" green="1" blue="0.073184253022421486" alpha="1" colorSpace="calibratedRGB"/>
@@ -255,11 +255,12 @@
                     <connections>
                         <outlet property="BaseballView" destination="pr7-tH-nt6" id="Svg-j1-eSc"/>
                         <outlet property="BattoView" destination="Ivk-rG-xQY" id="Egs-WI-bd4"/>
+                        <outlet property="Nageru" destination="JOO-RA-ccq" id="LAz-TP-aey"/>
                         <outlet property="ToumeiView" destination="oJR-yx-bv2" id="qYV-zC-jzL"/>
                         <outlet property="hanteilabel" destination="hcm-P9-yko" id="jb7-lO-ixi"/>
                         <outlet property="hp2Label" destination="cOi-17-Yk3" id="RCr-Ec-x8L"/>
                         <outlet property="hpLabel" destination="IvI-hJ-8dV" id="Ta0-aV-e88"/>
-                        <outlet property="label" destination="zYm-Ez-h59" id="P6I-yA-ySv"/>
+                        <outlet property="label" destination="zYm-Ez-h59" id="7DE-rM-ja2"/>
                         <outlet property="myhpBar" destination="mKJ-on-fHw" id="kXf-rC-hId"/>
                         <outlet property="myhpLabel" destination="jMb-Pw-0zd" id="2eE-I0-bhT"/>
                         <outlet property="nageru" destination="JOO-RA-ccq" id="hpg-8o-LxH"/>
@@ -268,7 +269,9 @@
                         <outlet property="pushbtn" destination="iKK-8p-PaM" id="ZZo-A0-7ke"/>
                         <outlet property="teki1" destination="Z0e-DJ-Ivs" id="c7Y-iN-iu6"/>
                         <outlet property="teki2" destination="GeV-HJ-vNn" id="Iby-eJ-yVc"/>
+                        <outlet property="utu" destination="iKK-8p-PaM" id="PxC-FM-lRr"/>
                         <segue destination="YXI-5c-B2t" kind="modal" identifier="gameover" id="KBw-Tm-2di"/>
+                        <segue destination="AUN-QO-RLn" kind="modal" identifier="clear" id="kWZ-eT-OFY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAO-sd-Uzx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -469,7 +472,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fyw-0k-QSw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1015" y="569"/>
+            <point key="canvasLocation" x="536" y="-416"/>
         </scene>
     </scenes>
     <resources>
@@ -492,6 +495,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="Whz-2H-N4f"/>
         <segue reference="5Zg-sy-IR7"/>
-        <segue reference="O25-4Z-5Od"/>
+        <segue reference="sXZ-sp-qFm"/>
     </inferredMetricsTieBreakers>
 </document>

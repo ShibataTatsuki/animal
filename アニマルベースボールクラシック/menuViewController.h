@@ -10,4 +10,6 @@
 
 @interface menuViewController : UIViewController
 
+-(IBAction)kuest;
+
 @end
