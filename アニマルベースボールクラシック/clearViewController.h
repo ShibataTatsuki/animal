@@ -11,6 +11,7 @@
 @interface clearViewController : UIViewController{
     IBOutlet UILabel*sukoalabel;
     IBOutlet UILabel*sukoanewlabel;
+    IBOutlet UITextField *tourokutextField;
 }
 
 

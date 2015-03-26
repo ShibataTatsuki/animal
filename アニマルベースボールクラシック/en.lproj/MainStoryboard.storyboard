@@ -455,39 +455,48 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="今のスコア" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fpA-yO-QKi">
-                                <rect key="frame" x="118" y="183" width="85" height="21"/>
+                                <rect key="frame" x="26" y="183" width="85" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DeX-pz-ee4">
-                                <rect key="frame" x="40" y="311" width="241" height="32"/>
+                                <rect key="frame" x="114" y="229" width="241" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最高記録" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cpV-XT-jst">
-                                <rect key="frame" x="126" y="273" width="68" height="21"/>
+                                <rect key="frame" x="200" y="183" width="68" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aEN-a1-yWw">
-                                <rect key="frame" x="40" y="212" width="241" height="41"/>
+                                <rect key="frame" x="-47" y="224" width="241" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" minimumFontSize="17" id="mMv-e5-bi0">
+                                <rect key="frame" x="26" y="278" width="269" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.95303347462592858" blue="0.96766256807917606" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.012593720712277387" green="0.012462536121524497" blue="0.012724905303030276" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.32549020649999999" green="0.90980398650000005" blue="0.34509804840000002" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <connections>
                         <outlet property="sukoalabel" destination="DeX-pz-ee4" id="YkR-tQ-ThH"/>
                         <outlet property="sukoanewlabel" destination="aEN-a1-yWw" id="y7s-rO-Clt"/>
+                        <outlet property="tourokutextField" destination="mMv-e5-bi0" id="cax-yh-NF5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fyw-0k-QSw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -513,8 +522,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Whz-2H-N4f"/>
+        <segue reference="sXZ-sp-qFm"/>
         <segue reference="5Zg-sy-IR7"/>
-        <segue reference="O25-4Z-5Od"/>
+        <segue reference="Whz-2H-N4f"/>
     </inferredMetricsTieBreakers>
 </document>

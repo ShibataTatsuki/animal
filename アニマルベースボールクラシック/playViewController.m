@@ -63,8 +63,8 @@
         NSLog(@"nil");
        
         myhp=18000;
-        hp2=12000;
-        hp=12000;
+        hp2=3000;
+        hp=3000;
         
         
         
@@ -244,10 +244,8 @@
         //自分のHPを保存する 最高記録だったら保存する
         if (myhp_best < myhp) {
             [df setInteger:myhp forKey:@"myhp"];
-            
- 
         }
-        [df setInteger:myhp forKey:@"myhp_new"];
+            [df setInteger:myhp forKey:@"myhp_new"];
         if (myhp_worst >= myhp) {
             
             [df setInteger:myhp forKey:@"myhp_worst"];

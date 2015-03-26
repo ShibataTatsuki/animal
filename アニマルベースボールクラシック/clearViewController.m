@@ -32,6 +32,14 @@
     
     //データを呼び出す
     NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
+    
+    // UITextFieldのインスタンスをビューに追加
+    [self.view addSubview:tourokutextField];
+    if([[df objectForKey:@"myhp_new"] integerValue] > [[df objectForKey:@"myhp"] integerValue]){
+        NSLog(@"新記録だドン");
+    }
+    NSLog(@"new = %d : %d",[[df objectForKey:@"myhp_new"] integerValue], [[df objectForKey:@"myhp"] integerValue] );
+    
     int myhp = [[df objectForKey:@"myhp"] integerValue];
     sukoalabel.text=[NSString stringWithFormat:@"%d",myhp];
     
@@ -39,9 +47,57 @@
     int myhp_new = [[df objectForKey:@"myhp_new"] integerValue];
     sukoanewlabel.text=[NSString stringWithFormat:@"%d",myhp_new];
     
+    
+    
+    
+    
+    UITextField *tourokuTextField = [[UITextField alloc] init];
+    // 枠線のスタイルを設定
+    tourokutextField.borderStyle = UITextBorderStyleRoundedRect;
+    
+    // テキストを左寄せにする
+    tourokutextField.textAlignment = UITextAlignmentLeft;
+    
+    // ラベルのテキストのフォントを設定
+    tourokutextField.font = [UIFont fontWithName:@"Helvetica" size:14];
+    
+    // プレースホルダ
+    tourokutextField.placeholder = @"名前を入力してください";
+    
+    
+    // キーボードの種類を設定
+    tourokutextField.keyboardType = UIKeyboardTypeDefault;
+    
+    // リターンキーの種類を設定
+    tourokutextField.returnKeyType = UIReturnKeyDefault;
+    
+    // 編集中にテキスト消去ボタンを表示
+    tourokutextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    
+    // デリゲートを設定
+    tourokutextField.delegate = self;
+    
+    
     [self.kuria play];
-    // Do any additional setup after loading the view.
 }
+
+
+/**
+ * キーボードでReturnキーが押されたとき
+ * @param textField イベントが発生したテキストフィールド
+ */
+- (BOOL)textFieldShouldReturn:(UITextField *)tourokutextField
+{
+    // キーボードを隠す
+    [self.view endEditing:YES];
+    
+    return YES;
+}
+    
+    
+    
+    // Do any additional setup after loading the view.
+
 
 - (void)didReceiveMemoryWarning
 {
