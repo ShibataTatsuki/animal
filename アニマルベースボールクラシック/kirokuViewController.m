@@ -26,7 +26,23 @@
     sukoa_worstlabel.text=[NSString stringWithFormat:@"%d",myhp_worst];
 
 }
+-(IBAction)resseto{
+    
+    number=0;
+    sukoalabel.text=[NSString stringWithFormat:@"%d",number];
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];  // 取得
+    [ud setInteger:0 forKey:@"myhp"];
+    [ud synchronize];
+}
 
+-(IBAction)resseto2{
+    number2=0;
+    sukoa_worstlabel.text=[NSString stringWithFormat:@"%d",number2];
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];  // 取得
+    [ud setInteger:0 forKey:@"myhp_worst"];
+    [ud synchronize];
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

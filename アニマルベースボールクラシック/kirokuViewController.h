@@ -10,9 +10,12 @@
 
 @interface kirokuViewController : UIViewController{
     int number;
+    int number2;
     IBOutlet UITableView*table;
     IBOutlet UILabel*sukoalabel;
     IBOutlet UILabel*sukoa_worstlabel;
     
 }
+-(IBAction)resseto;
+-(IBAction)resseto2;
 @end

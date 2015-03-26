@@ -62,7 +62,7 @@
     if (hozonArray[2]==0) {
         NSLog(@"nil");
        
-        myhp=20000;
+        myhp=18000;
         hp2=12000;
         hp=12000;
         
@@ -83,7 +83,7 @@
     
     
     hpLabel.text=[NSString stringWithFormat:@"%d",myhp];
-    myhpBar.progress=myhp/20000.0;
+    myhpBar.progress=myhp/18000.0;
     
     hp2Label.text=[NSString stringWithFormat:@"%d",hp2];
     progress2.progress=hp2/12000.0;
@@ -218,7 +218,7 @@
     
     
     
-    myhpBar.progress=(float)myhp/ 20000;
+    myhpBar.progress=(float)myhp/ 18000;
     //[myhpBar setProgress:(float)myhp/ 1000.0];
     myhpLabel.text = [NSString stringWithFormat:@"%d",myhp];
     if(hp<=0 && hp2<=0){
@@ -245,6 +245,7 @@
         if (myhp_best < myhp) {
             [df setInteger:myhp forKey:@"myhp"];
             
+ 
         }
         [df setInteger:myhp forKey:@"myhp_new"];
         if (myhp_worst >= myhp) {
@@ -393,7 +394,7 @@
 -(void)damage{
     random_number=arc4random() % 25* 100;
     myhp=myhp-random_number;
-    [myhpBar setProgress:myhpBar.progress-random_number/20000 animated:true];
+    [myhpBar setProgress:myhpBar.progress-random_number/18000 animated:true];
     myhpLabel.text = [NSString stringWithFormat:@"%d", myhp];
 }
 
