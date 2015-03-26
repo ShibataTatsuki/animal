@@ -247,10 +247,14 @@
             
         }
         [df setInteger:myhp forKey:@"myhp_new"];
-        if (myhp_worst > myhp) {
+        if (myhp_worst >= myhp) {
             
             [df setInteger:myhp forKey:@"myhp_worst"];
             
+        }else if (myhp_worst==0){
+
+            [df setInteger:myhp forKey:@"myhp_worst"];
+
         }
         NSLog(@"call clear");
         [player stop];
