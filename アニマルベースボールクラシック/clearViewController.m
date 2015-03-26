@@ -37,8 +37,15 @@
     [self.view addSubview:tourokutextField];
     if([[df objectForKey:@"myhp_new"] integerValue] > [[df objectForKey:@"myhp"] integerValue]){
         NSLog(@"新記録だドン");
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *dStr = [defaults stringForKey:@"MEMO"];
+        
+        //テキストフィールドへ文字を表示する
+        tourokutextField.text = dStr;
     }
-    NSLog(@"new = %d : %d",[[df objectForKey:@"myhp_new"] integerValue], [[df objectForKey:@"myhp"] integerValue] );
+    
+    //ボタンを押したとき
+        NSLog(@"new = %d : %d",[[df objectForKey:@"myhp_new"] integerValue], [[df objectForKey:@"myhp"] integerValue] );
     
     int myhp = [[df objectForKey:@"myhp"] integerValue];
     sukoalabel.text=[NSString stringWithFormat:@"%d",myhp];
@@ -54,7 +61,7 @@
     UITextField *tourokuTextField = [[UITextField alloc] init];
     // 枠線のスタイルを設定
     tourokutextField.borderStyle = UITextBorderStyleRoundedRect;
-    
+   
     // テキストを左寄せにする
     tourokutextField.textAlignment = UITextAlignmentLeft;
     
@@ -80,6 +87,7 @@
     
     [self.kuria play];
 }
+
 
 
 /**

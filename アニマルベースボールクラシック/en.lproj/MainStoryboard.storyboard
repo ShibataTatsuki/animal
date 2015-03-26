@@ -522,8 +522,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="sXZ-sp-qFm"/>
-        <segue reference="5Zg-sy-IR7"/>
         <segue reference="Whz-2H-N4f"/>
+        <segue reference="5Zg-sy-IR7"/>
+        <segue reference="O25-4Z-5Od"/>
     </inferredMetricsTieBreakers>
 </document>
