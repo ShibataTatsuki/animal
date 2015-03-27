@@ -122,15 +122,6 @@
                                     <segue destination="bbX-Hg-vlK" kind="modal" id="5Zg-sy-IR7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dpd-TK-UMm">
-                                <rect key="frame" x="47" y="381" width="212" height="111"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraKakuProN-W6" family="Hiragino Kaku Gothic ProN" pointSize="31"/>
-                                <state key="normal" title="遊び方">
-                                    <color key="titleColor" red="0.049603435894396197" green="1" blue="0.0023767759445794123" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MwQ-ze-pgE">
                                 <rect key="frame" x="47" y="244" width="212" height="109"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -141,6 +132,18 @@
                                 </state>
                                 <connections>
                                     <segue destination="Gsd-NS-Kvo" kind="modal" id="SEE-CP-nO7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dpd-TK-UMm">
+                                <rect key="frame" x="47" y="381" width="212" height="111"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HiraKakuProN-W6" family="Hiragino Kaku Gothic ProN" pointSize="31"/>
+                                <state key="normal" title="遊び方">
+                                    <color key="titleColor" red="0.049603435894396197" green="1" blue="0.0023767759445794123" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="mtn-nu-Xhu" kind="modal" id="hby-aX-T1T"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -373,16 +376,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="akq-Ig-eFe">
-                                <rect key="frame" x="47" y="490" width="226" height="39"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <state key="normal" title="戻る">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="mtn-nu-Xhu" kind="modal" id="LF3-aL-DMA"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="　　　＜操作方法＞　　　　　　　　　ボールを投げますか？のボタンを押せばボールがででくるぞ！打つボタンでタイミングよく打て！（打つボタンは一回しかおせないよ）そして敵の動物をたおすんだ！" selectable="NO" id="aU6-LH-etx">
                                 <rect key="frame" x="7" y="90" width="286" height="176"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -390,6 +383,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="akq-Ig-eFe">
+                                <rect key="frame" x="47" y="490" width="226" height="39"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <state key="normal" title="戻る">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="mtn-nu-Xhu" kind="modal" id="JFg-K2-FbN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -562,8 +565,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Whz-2H-N4f"/>
+        <segue reference="JFg-K2-FbN"/>
+        <segue reference="sXZ-sp-qFm"/>
         <segue reference="5Zg-sy-IR7"/>
-        <segue reference="O25-4Z-5Od"/>
     </inferredMetricsTieBreakers>
 </document>

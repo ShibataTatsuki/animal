@@ -90,6 +90,18 @@
 
     
 }
+-(IBAction)modoru{
+    if ([[df objectForKey:@"myhp_new"] integerValue] <= [[df objectForKey:@"myhp_worst"] integerValue]){
+        //worstScoreなら
+        //worstScoreをNsuserdefoltsで保存する
+        int tmp = [[df objectForKey:@"myhp_new"] integerValue];
+        [df setInteger:tmp forKey:@"myhp_worst"];
+        [df synchronize];
+        saiteilabel.text=[NSString stringWithFormat:@"%d",tmp];
+
+        
+    }
+}
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [self.view endEditing:YES];

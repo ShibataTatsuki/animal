@@ -12,6 +12,8 @@
     IBOutlet UILabel*sukoalabel;
     IBOutlet UILabel*sukoanewlabel;
     IBOutlet UILabel*sukoanewworstLabel;
+    IBOutlet UILabel*saikoulabel; //topNameLabel
+    IBOutlet UILabel*saiteilabel; //worstNameLabel
     
     IBOutlet UITextField *tourokutextField;
     
@@ -19,7 +21,7 @@
 }
 
 @property AVAudioPlayer *kuria;
-- (IBAction)push;
+- (IBAction)modoru;
 
 
 
