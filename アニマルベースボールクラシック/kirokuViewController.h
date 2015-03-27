@@ -9,13 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface kirokuViewController : UIViewController{
-    int number;
-    int number2;
-    IBOutlet UITableView*table;
-    IBOutlet UILabel*sukoalabel;
-    IBOutlet UILabel*sukoa_worstlabel;
+
+    IBOutlet UILabel*sukoalabel; //scoreLabel
+    IBOutlet UILabel*sukoa_worstlabel; //scoreWorstLabel
+    IBOutlet UILabel*saikoulabel; //topNameLabel
+    IBOutlet UILabel*saiteilabel; //worstNameLabel
     
 }
--(IBAction)resseto;
--(IBAction)resseto2;
+
+-(IBAction)resetTopScore;
+-(IBAction)resetWorstScore;
+
 @end

@@ -8,43 +8,46 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-@interface playViewController : UIViewController
-{   
+@interface playViewController : UIViewController{
+
+    int hp;
+    int hp2;
+    int myhp;
+    int hozonArray[3];
+    int random_number;
+
+    IBOutlet UILabel *hpLabel;
+    IBOutlet UILabel* hp2Label;
+    IBOutlet UILabel *hanteilabel;
+    IBOutlet UILabel *myhpLabel;
+    IBOutlet UILabel *label;
+
+    IBOutlet UIImageView*teki1;
+    IBOutlet UIImageView*teki2;
     IBOutlet UIImageView*BaseballView;
     IBOutlet UIImageView*BattoView;
     IBOutlet UIImageView*ToumeiView;
-    int myhp;
-    IBOutlet UILabel *myhpLabel;
+
+    
     IBOutlet UIProgressView *myhpBar;
-    int random_number;
-    IBOutlet UIButton*nageru;
-    int power;
-    IBOutlet UILabel *label;
     IBOutlet UIProgressView *progress1;
     IBOutlet UIProgressView *progress2;
-    int hp;
-    IBOutlet UILabel *hpLabel;
-    int hp2;
-    IBOutlet UILabel* hp2Label;
-    IBOutlet UIImageView*teki1;
-    IBOutlet UIImageView*teki2;
-    IBOutlet UIButton *Nageru;
-    IBOutlet UIButton *utu;
     IBOutlet UILabel *menu;
     
+    IBOutlet UIButton*nageru;
     IBOutlet UIButton *pushbtn;
+    IBOutlet UIButton *Nageru;
+    IBOutlet UIButton *utu;
     
     float ballMoveX;
     float ballMoveY;
-    BOOL hitTiming;
-    BOOL swing;
     float gapY;
+    
+    BOOL swing;
+    BOOL hitTiming;
+
     NSTimer *ballTm;
-    IBOutlet UILabel *hanteilabel;
-    
-    int hozonArray[3];
-    
-    }
+}
 
 @property(nonatomic,retain)AVAudioPlayer *player;
 @property AVAudioPlayer *batto_sound;
@@ -55,9 +58,6 @@
 
 -(IBAction)nageru;
 -(IBAction)push2;
-
-
-
 
 
 @end

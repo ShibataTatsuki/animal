@@ -11,16 +11,7 @@
 
 @interface ViewController : UIViewController
 
-
-
-
 @property(nonatomic,retain)AVAudioPlayer *n78;
 -(IBAction)start;
-
-
-
-
-
-
 
 @end

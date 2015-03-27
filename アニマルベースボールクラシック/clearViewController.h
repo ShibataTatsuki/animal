@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
-@interface clearViewController : UIViewController{
-       IBOutlet UILabel*sukoalabel;
+@interface clearViewController : UIViewController<UITextFieldDelegate>{
+    IBOutlet UILabel*sukoalabel;
     IBOutlet UILabel*sukoanewlabel;
+    IBOutlet UILabel*sukoanewworstLabel;
+    
     IBOutlet UITextField *tourokutextField;
     
-   }
+    NSUserDefaults *df;
+}
 
 @property AVAudioPlayer *kuria;
 - (IBAction)push;

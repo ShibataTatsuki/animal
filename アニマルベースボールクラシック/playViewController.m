@@ -75,12 +75,7 @@
         hp = hozonArray[0];
         hp2 = hozonArray[1];
         myhp = hozonArray[2];
-
-        
-
-
     }
-    
     
     hpLabel.text=[NSString stringWithFormat:@"%d",myhp];
     myhpBar.progress=myhp/18000.0;
@@ -93,18 +88,10 @@
     
     [defaults removeObjectForKey:@"hozon"];
     [defaults synchronize];
-    
-    
-    
-     ballMoveY = 2;
-    
-    
-    
-    
+
+    ballMoveY = 2;
     swing = NO;
     BaseballView.hidden=NO;
-    
-    
 }
 
 
@@ -114,7 +101,6 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)hogeMethod{
-    
     //敵1とボール
     if (CGRectIntersectsRect(teki1.frame, BaseballView.frame ) && teki1.hidden!=YES){
         //お互いが重なったときの処理をifの中に書きます。
@@ -132,12 +118,7 @@
         [self.dageki_sound play];
         hanteilabel.text=@"ヒット";
         hanteilabel.hidden=NO;
-        
-        
     }
-    
-    
-    
     //敵2とボール
     if (CGRectIntersectsRect(teki2.frame, BaseballView.frame )&& teki2.hidden!=YES){
         //お互いが重なったときの処理をifの中に書きます。
@@ -154,16 +135,6 @@
         hanteilabel.text=@"ヒット";
         hanteilabel.hidden=NO;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     //敵と透明ビュー
     if (CGRectIntersectsRect(ToumeiView.frame, BaseballView.frame )){
         //お互いが重なったときの処理をifの中に書きます。
@@ -172,14 +143,11 @@
     }else{
         hitTiming = NO;
     }
-    
-    
     if(hp==0){
         //hanteilabel.hidden=YES;
         teki1.hidden=YES;
         hpLabel.hidden=YES;
         progress1.hidden=YES;
-        
     }
     else{
         label.hidden=YES;
@@ -199,7 +167,6 @@
         myhp=0;
         label.text=@"You died";
         myhpLabel.text = [NSString stringWithFormat:@"%d",myhp];
-        [self.fail play];
         label.hidden=NO;
         NSLog(@"call die");
         [ballTm invalidate];
@@ -208,16 +175,10 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self performSegueWithIdentifier:@"gameover" sender:nil];
             [player stop];
-            
-            
+            [self.fail play];
         });
-        
-        
     }
-    
-    
-    
-    
+
     myhpBar.progress=(float)myhp/ 18000;
     //[myhpBar setProgress:(float)myhp/ 1000.0];
     myhpLabel.text = [NSString stringWithFormat:@"%d",myhp];
@@ -229,17 +190,11 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self performSegueWithIdentifier:@"clear" sender:nil];
         });
-        
-        
-        
         //データを呼び出す
         NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
         int myhp_best = [[df objectForKey:@"myhp"] integerValue];
         int myhp_worst = [[df objectForKey:@"myhp_worst"] integerValue];
-        
-        
-        
-        
+        int myhp_new_worst = [[df objectForKey:@"myhp_worst"]integerValue];
         
         //自分のHPを保存する 最高記録だったら保存する
         if (myhp_best < myhp) {
@@ -247,13 +202,10 @@
         }
             [df setInteger:myhp forKey:@"myhp_new"];
         if (myhp_worst >= myhp) {
-            
             [df setInteger:myhp forKey:@"myhp_worst"];
-            
-        }else if (myhp_worst==0){
-
+        }
+        else if (myhp_worst==0){
             [df setInteger:myhp forKey:@"myhp_worst"];
-
         }
         NSLog(@"call clear");
         [player stop];
@@ -270,12 +222,9 @@
 
 -(void)ballMove{
     BaseballView.center = CGPointMake(BaseballView.center.x +ballMoveX  ,BaseballView.center.y + ballMoveY);
-    
     if(BaseballView.center.y >= 430 || BaseballView.center.y <= 0){
         BaseballView.hidden = YES;
-        
     }
-    
     if(BaseballView.hidden == YES){
         BaseballView.center = CGPointMake(160,171);
         [ballTm invalidate];
@@ -283,15 +232,10 @@
         ballMoveY = 2;
         ballMoveX = 0;
         swing = NO;
-        
         CGFloat angle = 0;
         BattoView.transform = CGAffineTransformMakeRotation(angle);
         [self damage];
-        
     }
-    
-    
-    
 }
 
 
@@ -324,20 +268,16 @@
      repeats:YES
      ];
     
-    
     BaseballView.hidden=NO;
     nageru.hidden=YES;
-    
     pushbtn.hidden=NO;
     BaseballView.center = CGPointMake(160,171);
     [ballTm fire];
-    
 }
 
 
 
 -(IBAction)push2{
-    
     pushbtn.hidden=YES;
     [self.bat_sound play];
     if(swing == NO){
@@ -358,24 +298,18 @@
             gapY = ToumeiView.center.y - BaseballView.center.y;
             ballMoveY = -ballMoveY*5;
             ballMoveX = -gapY / 30 *5;
-            
         }
         //振るか振らないか
         swing = YES;
-        
     }
-    
 }
 -(IBAction)menu{
     hozonArray[0]=hp;
     hozonArray[1]=hp2;
     hozonArray[2]=myhp;
-    
-    
     for (int i = 0; i<3; i++) {
         NSLog(@"hozonarrayの中身は%d",hozonArray[i]);
     }
-    
     //hozonarrayをnsuserdefalutsで保存
     NSUserDefaults  *defaults = [NSUserDefaults standardUserDefaults];
     //http://stackoverflow.com/questions/350848/possible-to-save-an-integer-array-using-nsuserdefaults-on-iphone
@@ -385,7 +319,6 @@
     if (successful) {
         NSLog(@"%@", @"データの保存に成功しました。");
     }
-    
     [player stop];
 }
 
@@ -407,16 +340,6 @@
  // Pass the selected object to the new view controller.
  }
  */
-
-
-
-- (void)gameover
-{
-    
-}
-
-
-
 
 @end
 

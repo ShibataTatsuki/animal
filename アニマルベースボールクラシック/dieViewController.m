@@ -29,14 +29,11 @@
     NSString *path7 = [[NSBundle mainBundle] pathForResource:@"fail" ofType:@"mp3"];
     NSURL *url7 = [NSURL fileURLWithPath:path7];
     self.fail = [[AVAudioPlayer alloc] initWithContentsOfURL:url7 error:NULL];
-    
-    
+   
+
     [self.fail play];
     NSLog(@"test");
-
-  }
-
-
+}
 
 
 - (void)didReceiveMemoryWarning
