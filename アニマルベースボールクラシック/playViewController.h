@@ -34,7 +34,7 @@
     IBOutlet UIProgressView *progress2;
     IBOutlet UILabel *menu;
     
-    IBOutlet UIButton*nageru;
+//    IBOutlet UIButton*nageru;
     IBOutlet UIButton *pushbtn;
     IBOutlet UIButton *Nageru;
     IBOutlet UIButton *utu;
@@ -50,12 +50,13 @@
 }
 
 @property(nonatomic,retain)AVAudioPlayer *player;
+@property(nonatomic,retain)AVAudioPlayer *boss_sound;
 @property AVAudioPlayer *batto_sound;
 @property AVAudioPlayer *dageki_sound;
 @property AVAudioPlayer *bat_sound;
 @property AVAudioPlayer *kuria;
 @property AVAudioPlayer *fail;
-
+@property AVAudioPlayer *timebutton;
 -(IBAction)nageru;
 -(IBAction)push2;
 

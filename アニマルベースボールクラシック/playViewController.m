@@ -22,6 +22,11 @@
 
 
 - (void)viewDidLoad
+// viewDidLoad は、「この画面を最初に表示した瞬間」にしか呼ばれない。
+// つまり、menuViewControllerで [self dismissViewControllerAnimated:YES completion:nil] を使って戻って来た
+// 時には呼ばれない。そのため、戻って来た時に流したいBGMなどは、viewWillAppearに書くようにする。
+// viewWillAppearは、「この画面を最初に表示した瞬間」も、戻って来た時も呼ばれる。
+// 参考： http://blog.livedoor.jp/sasata299/archives/52029262.html
 {
     [super viewDidLoad];
     NSString *path = [[NSBundle mainBundle] pathForResource:@"batto_sound" ofType:@"wav"];
@@ -40,10 +45,11 @@
     NSURL *url7 = [NSURL fileURLWithPath:path7];
     self.fail = [[AVAudioPlayer alloc] initWithContentsOfURL:url7 error:NULL];
     
-    NSURL *url4 = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"boss_sound"ofType:@"mp3"]];
-    NSError *error = nil;
-    player = [[AVAudioPlayer alloc] initWithContentsOfURL:url4 error:&error];
-    [player play];
+    NSString *path5 = [[NSBundle mainBundle] pathForResource:@"timebutton" ofType:@"mp3"];
+    NSURL *url5 = [NSURL fileURLWithPath:path5];
+    self.timebutton = [[AVAudioPlayer alloc] initWithContentsOfURL:url5 error:NULL];
+    
+    
     
     tm =
     [NSTimer
@@ -61,10 +67,10 @@
     memcpy(&hozonArray, data.bytes, data.length);
     if (hozonArray[2]==0) {
         NSLog(@"nil");
-       
+        
         myhp=18000;
-        hp2=12000;
-        hp=12000;
+        hp2=3000;
+        hp=3000;
         
         
         
@@ -88,12 +94,21 @@
     
     [defaults removeObjectForKey:@"hozon"];
     [defaults synchronize];
-
+    
     ballMoveY = 2;
     swing = NO;
     BaseballView.hidden=NO;
+    utu.hidden = YES;
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    NSURL *url4 = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"boss_sound"ofType:@"mp3"]];
+    NSError *error = nil;
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:url4 error:&error];
+    [player play];
+    
+
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -117,6 +132,8 @@
         hpLabel.text=[NSString stringWithFormat:@"%d",hp];
         [self.dageki_sound play];
         hanteilabel.text=@"ヒット";
+        Nageru.hidden=YES;
+
         hanteilabel.hidden=NO;
     }
     //敵2とボール
@@ -133,6 +150,7 @@
         hp2Label.text = [NSString stringWithFormat:@"%d", hp2];
         [self.dageki_sound play];
         hanteilabel.text=@"ヒット";
+
         hanteilabel.hidden=NO;
     }
     //敵と透明ビュー
@@ -168,6 +186,8 @@
         label.text=@"You died";
         myhpLabel.text = [NSString stringWithFormat:@"%d",myhp];
         label.hidden=NO;
+        Nageru.hidden = YES;
+        utu.hidden = YES;
         NSLog(@"call die");
         [ballTm invalidate];
         [tm invalidate];
@@ -178,7 +198,7 @@
             [self.fail play];
         });
     }
-
+    
     myhpBar.progress=(float)myhp/ 18000;
     //[myhpBar setProgress:(float)myhp/ 1000.0];
     myhpLabel.text = [NSString stringWithFormat:@"%d",myhp];
@@ -187,8 +207,17 @@
         label.hidden=NO;
         utu.hidden=YES;
         Nageru.hidden=YES;
+        
+        CGRect frame = Nageru.frame;
+        frame.origin.x = 320;
+        Nageru.frame = frame;
+        
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            
             [self performSegueWithIdentifier:@"clear" sender:nil];
+            CGRect frame = Nageru.frame;
+            frame.origin.x = 0;
+            Nageru.frame = frame;
         });
         //データを呼び出す
         NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
@@ -200,7 +229,7 @@
         if (myhp_best < myhp) {
             [df setInteger:myhp forKey:@"myhp"];
         }
-            [df setInteger:myhp forKey:@"myhp_new"];
+        [df setInteger:myhp forKey:@"myhp_new"];
         if (myhp_worst >= myhp) {
             [df setInteger:myhp forKey:@"myhp_worst"];
         }
@@ -228,7 +257,7 @@
     if(BaseballView.hidden == YES){
         BaseballView.center = CGPointMake(160,171);
         [ballTm invalidate];
-        nageru.hidden=NO;
+        Nageru.hidden=NO;
         ballMoveY = 2;
         ballMoveX = 0;
         swing = NO;
@@ -269,7 +298,7 @@
      ];
     
     BaseballView.hidden=NO;
-    nageru.hidden=YES;
+    Nageru.hidden=YES;
     pushbtn.hidden=NO;
     BaseballView.center = CGPointMake(160,171);
     [ballTm fire];
@@ -320,6 +349,9 @@
         NSLog(@"%@", @"データの保存に成功しました。");
     }
     [player stop];
+    [_timebutton play];
+    [_boss_sound stop];
+    
 }
 
 -(void)damage{
@@ -328,6 +360,12 @@
     [myhpBar setProgress:myhpBar.progress-random_number/18000 animated:true];
     myhpLabel.text = [NSString stringWithFormat:@"%d", myhp];
 }
+-(IBAction)back{
+    [_timebutton play];
+    [player stop];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 
 /*

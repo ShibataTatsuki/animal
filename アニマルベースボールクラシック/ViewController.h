@@ -12,6 +12,11 @@
 @interface ViewController : UIViewController
 
 @property(nonatomic,retain)AVAudioPlayer *n78;
+@property AVAudioPlayer *startbutton;
+@property AVAudioPlayer *timebutton;
 -(IBAction)start;
+-(IBAction)explanation;
+-(IBAction)savedater;
+
 
 @end

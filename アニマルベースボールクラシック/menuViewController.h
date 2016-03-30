@@ -7,9 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+@interface menuViewController : UIViewController{
+    IBOutlet UIButton *questback;
+}
+-(IBAction)questback;
+-(IBAction)back;
+-(IBAction)rule;
 
-@interface menuViewController : UIViewController
 
--(IBAction)kuest;
+
+@property AVAudioPlayer *timebutton;
+@property(nonatomic,retain)AVAudioPlayer *player;
+@property(nonatomic,retain)AVAudioPlayer *boss_sound;
 
 @end

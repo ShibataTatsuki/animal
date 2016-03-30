@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "AppDelegate.h"
+
 
 @interface ViewController ()
 
@@ -20,11 +22,23 @@
 {
     [super viewDidLoad];
     
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    appDelegate.kirikae = 0;
+    
     NSURL *url3 = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"n78"ofType:@"mp3"]];
     NSError *error = nil;
     n78 = [[AVAudioPlayer alloc] initWithContentsOfURL:url3 error:&error];
     [n78 play];
     
+    NSString *path6 = [[NSBundle mainBundle] pathForResource:@"startbutton" ofType:@"mp3"];
+    NSURL *url6 = [NSURL fileURLWithPath:path6];
+    self.startbutton = [[AVAudioPlayer alloc] initWithContentsOfURL:url6 error:NULL];
+    
+    NSString *path4 = [[NSBundle mainBundle] pathForResource:@"timebutton" ofType:@"mp3"];
+    NSURL *url4 = [NSURL fileURLWithPath:path4];
+    self.timebutton = [[AVAudioPlayer alloc] initWithContentsOfURL:url4 error:NULL];
+    
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults removeObjectForKey:@"hozon"];
     
@@ -33,7 +47,20 @@
 }
 -(IBAction)start{
     [n78 stop];
+    [_startbutton play];
+    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    appDelegate.kirikae = 1;
 }
+-(IBAction)savedater{
+    [n78 stop];
+    [_timebutton play];
+}
+
+-(IBAction)explanation{
+    [n78 stop];
+    [_timebutton play];
+}
+
 
 - (void)didReceiveMemoryWarning
 {

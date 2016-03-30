@@ -31,6 +31,10 @@
     NSURL *url6 = [NSURL fileURLWithPath:path6];
     self.kuria = [[AVAudioPlayer alloc] initWithContentsOfURL:url6 error:NULL];
     
+    NSString *path5 = [[NSBundle mainBundle] pathForResource:@"timebutton" ofType:@"mp3"];
+    NSURL *url5 = [NSURL fileURLWithPath:path5];
+    self.timebutton = [[AVAudioPlayer alloc] initWithContentsOfURL:url5 error:NULL];
+    
     //データを呼び出す
     df = [NSUserDefaults standardUserDefaults];
     
@@ -99,7 +103,7 @@
         [df synchronize];
         saiteilabel.text=[NSString stringWithFormat:@"%d",tmp];
 
-        
+        [_timebutton play];
     }
 }
 
@@ -109,6 +113,28 @@
     [df setObject:tourokutextField.text forKey:@"touroku2Name"];
     
     return YES;
+}
+
+-(IBAction) shareButton {
+
+    // mock or stub
+    NSLog(@"shareButton is called");
+    
+    NSString *text = [NSString stringWithFormat:@"%dHP残ったよ！",[[df objectForKey:@"myhp_new"] integerValue]];
+    NSArray* actItems = [NSArray arrayWithObjects:text, nil];
+    
+    UIActivityViewController *activityView =
+    [[UIActivityViewController alloc] initWithActivityItems:actItems applicationActivities:nil] ;
+    
+    [self presentViewController:activityView animated:YES completion:^{
+        UIKIT_EXTERN NSString *const UIActivityTypePostToFacebook   NS_AVAILABLE_IOS(6_0); // text, images, URLs
+        UIKIT_EXTERN NSString *const UIActivityTypePostToTwitter    NS_AVAILABLE_IOS(6_0); // text, images, URLs
+        UIKIT_EXTERN NSString *const UIActivityTypeMessage          NS_AVAILABLE_IOS(6_0); // text
+        UIKIT_EXTERN NSString *const UIActivityTypeMail             NS_AVAILABLE_IOS(6_0); // text, image, file:// URLs
+        UIKIT_EXTERN NSString *const UIActivityTypePrint            NS_AVAILABLE_IOS(6_0); // image, NSData, file:// URL, UIPrintPageRenderer, UIPrintFormatter, UIPrintInfo
+    }];
+
+
 }
 
 // Do any additional setup after loading the view.

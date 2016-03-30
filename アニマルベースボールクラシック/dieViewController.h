@@ -12,4 +12,7 @@
     }
 
 @property AVAudioPlayer *fail;
+@property AVAudioPlayer *timebutton;
+-(IBAction)back2;
+
 @end

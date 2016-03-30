@@ -29,12 +29,18 @@
     NSString *path7 = [[NSBundle mainBundle] pathForResource:@"fail" ofType:@"mp3"];
     NSURL *url7 = [NSURL fileURLWithPath:path7];
     self.fail = [[AVAudioPlayer alloc] initWithContentsOfURL:url7 error:NULL];
+    
+    NSString *path5 = [[NSBundle mainBundle] pathForResource:@"timebutton" ofType:@"mp3"];
+    NSURL *url5 = [NSURL fileURLWithPath:path5];
+    self.timebutton = [[AVAudioPlayer alloc] initWithContentsOfURL:url5 error:NULL];
    
 
     [self.fail play];
     NSLog(@"test");
 }
-
+-(IBAction)back2{
+    [_timebutton play];
+}
 
 - (void)didReceiveMemoryWarning
 {

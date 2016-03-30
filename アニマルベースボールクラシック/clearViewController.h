@@ -21,6 +21,8 @@
 }
 
 @property AVAudioPlayer *kuria;
+@property AVAudioPlayer *timebutton;
+
 - (IBAction)modoru;
 
 

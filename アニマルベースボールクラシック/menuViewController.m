@@ -7,6 +7,7 @@
 //
 
 #import "menuViewController.h"
+#import "AppDelegate.h"
 
 @interface menuViewController ()
 
@@ -17,7 +18,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    NSString *path5 = [[NSBundle mainBundle] pathForResource:@"timebutton" ofType:@"mp3"];
+    NSURL *url5 = [NSURL fileURLWithPath:path5];
+    self.timebutton = [[AVAudioPlayer alloc] initWithContentsOfURL:url5 error:NULL];
+    
+    if ( TRUE ) {
+        
+        // どちらの画面から来ても隠さないようにする
+        questback.hidden = NO;
+        
+    } else {
+        //Appdelegate内のkirikaeの変数を変化させる
+        //    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+        //    if (appDelegate.kirikae == 1){
+        //        questback.hidden = NO;
+        //    }else{
+        //        questback.hidden = YES;
+        //        }
+    }
+    
+    
+    
 }
+
+-(IBAction)questback{
+    [_timebutton play];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+-(IBAction)rule{
+    [_timebutton play];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

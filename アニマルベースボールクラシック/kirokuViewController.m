@@ -17,6 +17,16 @@
 }
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
+    NSString *path6 = [[NSBundle mainBundle] pathForResource:@"dater" ofType:@"mp3"];
+    NSURL *url6 = [NSURL fileURLWithPath:path6];
+    self.dater = [[AVAudioPlayer alloc] initWithContentsOfURL:url6 error:NULL];
+    [_dater play];
+    
+    NSString *path5 = [[NSBundle mainBundle] pathForResource:@"timebutton" ofType:@"mp3"];
+    NSURL *url5 = [NSURL fileURLWithPath:path5];
+    self.timebutton = [[AVAudioPlayer alloc] initWithContentsOfURL:url5 error:NULL];
+    
     //データを呼び出す
     NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
     int myhp = [[df objectForKey:@"myhp"] integerValue];
@@ -50,6 +60,7 @@
     NSUserDefaults *df = [NSUserDefaults standardUserDefaults];// 取得
     [df removeObjectForKey:@"tourokuName"];
     [df synchronize];
+    [_timebutton play];
     }
 
 -(IBAction)resetWorstScore{
@@ -62,13 +73,45 @@
     NSUserDefaults *df = [NSUserDefaults standardUserDefaults];// 取得
     [df removeObjectForKey:@"touroku2Name"];
     [df synchronize];
-
+    [_timebutton play];
+}
+-(IBAction)back{
+    [_dater stop];
+    [_timebutton play];
+    [self dismissViewControllerAnimated:YES completion:nil];
 
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+ -(IBAction) shareButton {
+     NSString *text = @"Hello World!";
+     NSArray* actItems = [NSArray arrayWithObjects:text, nil];
+     
+     UIActivityViewController *activityView =
+     [[UIActivityViewController alloc] initWithActivityItems:actItems applicationActivities:nil] ;
+     
+     [self presentViewController:activityView animated:YES completion:^{
+     }];
+//    NSString *text = "タイトル: " + textfield.text! + "\n 内容:　" + textview.text! + "#WeeksPlans"
+//    
+//    let activityItems = [text]
+//    
+//    let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+//    
+//    let excludedActivityTypes = [
+//                                 UIActivityTypePostToWeibo,
+//                                 UIActivityTypeSaveToCameraRoll,
+//                                 UIActivityTypePrint
+//                                 ]
+//    
+//    activityVC.excludedActivityTypes = excludedActivityTypes
+//    self.presentViewController(activityVC, animated: true, completion: nil)
+
+
+
+
+//- (void) didReceiveMemoryWarning {
+//    [super didReceiveMemoryWarning];
+//    // Dispose of any resources that can be recreated.
+//}
 
 
 /*
@@ -80,5 +123,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+ }
 @end
